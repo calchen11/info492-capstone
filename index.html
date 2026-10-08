@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capstone Team</title>
+    <meta name="description" content="INFO 492 capstone team: our thesis, project lens, coordination posture, and experiments." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="nav" id="nav">
+      <div class="container nav-inner">
+        <a href="#top" class="brand" data-bind="team.name"></a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links">
+          <a href="#thesis">Thesis</a>
+          <a href="#lens">Project Lens</a>
+          <a href="#posture">Coordination</a>
+          <a href="#experiments">Experiments</a>
+          <a href="#team">Team</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <p class="eyebrow"><span data-bind="team.course"></span> · <span data-bind="team.quarter"></span></p>
+          <h1 data-bind="team.name"></h1>
+          <p class="hero-tagline" data-bind="team.tagline"></p>
+          <div class="hero-ctas">
+            <a href="#thesis" class="btn btn-primary">Read our thesis</a>
+            <a href="#experiments" class="btn btn-ghost">See experiments</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="thesis" class="section">
+        <div class="container narrow">
+          <p class="section-label">01 · Thesis</p>
+          <h2>Our thesis</h2>
+          <blockquote class="claim" data-bind="thesis.claim"></blockquote>
+          <div class="prose" id="thesis-body"></div>
+          <div class="references" id="thesis-refs">
+            <h3>References</h3>
+            <ol></ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="lens" class="section alt">
+        <div class="container">
+          <p class="section-label">02 · Project Lens</p>
+          <h2>The data we're working from</h2>
+          <div class="lens-grid">
+            <article class="card">
+              <p class="card-kicker">Public dataset</p>
+              <h3 id="dataset-name"></h3>
+              <p data-bind="lens.description"></p>
+            </article>
+            <article class="card" id="synthetic-card">
+              <p class="card-kicker">Synthetic data</p>
+              <h4>Approach</h4>
+              <p data-bind="lens.synthetic.approach"></p>
+              <h4>Justification</h4>
+              <p data-bind="lens.synthetic.justification"></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="posture" class="section">
+        <div class="container">
+          <p class="section-label">03 · Coordination Posture</p>
+          <h2>Who's involved and what flows between them</h2>
+          <p class="lead" data-bind="posture.intro"></p>
+          <div class="parties" id="parties"></div>
+          <h3 class="sub-heading">Information artifacts</h3>
+          <div class="chips" id="artifacts"></div>
+          <p class="chip-legend"><span class="chip in">In scope</span><span class="chip">Out of scope</span></p>
+        </div>
+      </section>
+
+      <section id="experiments" class="section alt">
+        <div class="container">
+          <p class="section-label">04 · Experiments</p>
+          <h2>Four demos, one thesis</h2>
+          <p class="lead">Each demo tests one part of our coordination posture. Findings are added here as we finish each demo.</p>
+          <div class="demos" id="demos"></div>
+        </div>
+      </section>
+
+      <section id="team" class="section">
+        <div class="container">
+          <p class="section-label">05 · Team</p>
+          <h2>The people behind it</h2>
+          <div class="members" id="members"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <strong data-bind="team.name"></strong>
+          <p class="muted"><span data-bind="team.course"></span> · <span data-bind="team.quarter"></span></p>
+        </div>
+        <div class="footer-right">
+          <a id="doc-link" class="btn btn-small">Project document ↗</a>
+          <p class="muted">Last updated <span data-bind="lastUpdated"></span></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/content.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
