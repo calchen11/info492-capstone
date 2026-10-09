@@ -79,6 +79,15 @@
     parties.appendChild(card);
   });
 
+  // Artifacts
+  const artifacts = document.getElementById("artifacts");
+  C.posture.artifacts.forEach((a) => {
+    const card = el("article", "artifact card");
+    card.appendChild(el("h3", "", a.name));
+    card.appendChild(el("p", "", a.about));
+    artifacts.appendChild(card);
+  });
+
   // Demos
   const STATUS = { planned: "Planned", "in-progress": "In progress", complete: "Complete" };
   const demos = document.getElementById("demos");

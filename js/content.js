@@ -78,6 +78,13 @@ window.SITE_CONTENT = {
         role: "Publishes the bid items, quantities, and engineer’s estimate.",
       },
     ],
+    artifacts: [
+      { name: "Bid Item Schedules", about: "The list of items to be priced." },
+      { name: "Engineer’s Estimates", about: "Caltrans’s own cost estimate for the job." },
+      { name: "Bid Results", about: "The published prices from every bidder." },
+      { name: "Subcontractor Listings", about: "The subcontractors each bidder plans to use." },
+      { name: "Bid-Phase RFIs", about: "Questions bidders ask Caltrans to clarify unclear work. Our thesis links price differences to vaguely defined items." },
+    ],
   },
 
   // The four demos. status: "planned" | "in-progress" | "complete"

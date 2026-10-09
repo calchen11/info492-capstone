@@ -281,6 +281,7 @@ p.todo, blockquote.todo, h1.todo, h3.todo { display: block; padding: 0.5em 0.75e
 }
 .lead { font-size: 1.1rem; color: var(--muted); max-width: 720px; margin-bottom: 40px; }
 .lead.todo { color: var(--todo-text); }
+.sub-heading { margin-top: 48px; margin-bottom: 16px; }
 
 .card {
   background: var(--surface);
@@ -351,6 +352,17 @@ p.todo, blockquote.todo, h1.todo, h3.todo { display: block; padding: 0.5em 0.75e
 }
 .party p { font-size: 0.95rem; color: var(--muted); margin: 0; }
 .party p.todo { color: var(--todo-text); }
+
+/* Artifacts */
+.artifacts {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+@media (min-width: 960px) {
+  .artifacts { grid-template-columns: repeat(5, 1fr); gap: 12px; }
+}
+.artifact p { font-size: 0.95rem; color: var(--muted); margin: 0; }
 
 /* Demos */
 .demos {
