@@ -78,17 +78,6 @@ window.SITE_CONTENT = {
         role: "Publishes the bid items, quantities, and engineer’s estimate.",
       },
     ],
-    // Set inScope to true for the artifacts your team is working with.
-    artifacts: [
-      { name: "Bid Item Schedules", inScope: true },
-      { name: "Engineer’s Estimates", inScope: true },
-      { name: "Bid Results", inScope: true },
-      { name: "Subcontractor Listings", inScope: true },
-      { name: "Bid-Phase RFIs", inScope: true },
-      { name: "Change Orders", inScope: false },
-      { name: "Daily Reports", inScope: false },
-      { name: "Inspection Records", inScope: false },
-    ],
   },
 
   // The four demos. status: "planned" | "in-progress" | "complete"

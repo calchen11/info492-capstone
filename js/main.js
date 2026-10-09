@@ -79,12 +79,6 @@
     parties.appendChild(card);
   });
 
-  // Artifacts
-  const chips = document.getElementById("artifacts");
-  C.posture.artifacts.forEach((a) => {
-    chips.appendChild(el("span", "chip" + (a.inScope ? " in" : ""), a.name));
-  });
-
   // Demos
   const STATUS = { planned: "Planned", "in-progress": "In progress", complete: "Complete" };
   const demos = document.getElementById("demos");
