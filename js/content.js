@@ -10,7 +10,7 @@
  */
 window.SITE_CONTENT = {
   team: {
-    name: "TODO: Team Name",
+    name: "Sub Team 3",
     tagline:
       "Public construction pricing is published but not usable. We're building an agent-assisted tool that turns past Caltrans bids into grounded, editable price ranges.",
     course: "INFO 492 Capstone",
