@@ -18,6 +18,14 @@
     return n;
   }
 
+  function newTabLink(text, href, cls) {
+    const a = el("a", cls, text);
+    a.href = href;
+    a.target = "_blank";
+    a.rel = "noopener";
+    return a;
+  }
+
   function initials(name) {
     if (isTodo(name)) return "?";
     return name
@@ -42,11 +50,7 @@
   refs.forEach((r) => {
     const li = document.createElement("li");
     if (r.url) {
-      const a = el("a", "", r.text);
-      a.href = r.url;
-      a.target = "_blank";
-      a.rel = "noopener";
-      li.appendChild(a);
+      li.appendChild(newTabLink(r.text, r.url));
     } else {
       setText(li, r.text);
     }
@@ -56,11 +60,7 @@
   // Lens
   const dsName = document.getElementById("dataset-name");
   if (C.lens.datasetUrl) {
-    const a = el("a", "", C.lens.datasetName + " ↗");
-    a.href = C.lens.datasetUrl;
-    a.target = "_blank";
-    a.rel = "noopener";
-    dsName.appendChild(a);
+    dsName.appendChild(newTabLink(C.lens.datasetName + " ↗", C.lens.datasetUrl));
   } else {
     setText(dsName, C.lens.datasetName);
   }
@@ -95,13 +95,7 @@
       card.appendChild(el("h4", "", "Findings"));
       card.appendChild(el("p", "", d.findings));
     }
-    if (d.link) {
-      const a = el("a", "demo-link", "View demo →");
-      a.href = d.link;
-      a.target = "_blank";
-      a.rel = "noopener";
-      card.appendChild(a);
-    }
+    if (d.link) card.appendChild(newTabLink("View demo →", d.link, "demo-link"));
     demos.appendChild(card);
   });
 
@@ -118,15 +112,9 @@
       card.appendChild(el("div", "avatar", initials(m.name)));
     }
     card.appendChild(el("h3", "", m.name));
-    card.appendChild(el("p", "muted", m.role));
+    if (m.role) card.appendChild(el("p", "muted", m.role));
     const links = el("div", "member-links");
-    if (m.linkedin) {
-      const a = el("a", "", "LinkedIn");
-      a.href = m.linkedin;
-      a.target = "_blank";
-      a.rel = "noopener";
-      links.appendChild(a);
-    }
+    if (m.linkedin) links.appendChild(newTabLink("LinkedIn", m.linkedin));
     if (m.email) {
       const a = el("a", "", "Email");
       a.href = "mailto:" + m.email;
