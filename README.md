@@ -41,13 +41,4 @@ Ethan Kawahara · Calvin Chen · Tony Wu · Kaige Cheng
 
 ## About this repo
 
-The site is plain HTML, CSS, and JavaScript, with no build step. All page content lives in [`js/content.js`](js/content.js).
-
-To run it locally:
-
-```sh
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
-
-Changes pushed to `main` are deployed automatically through GitHub Pages.
+A static HTML/CSS/JS site deployed with GitHub Pages. All page content lives in [`js/content.js`](js/content.js).
