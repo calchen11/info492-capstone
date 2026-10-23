@@ -174,7 +174,7 @@ p.todo, blockquote.todo, h1.todo, h3.todo { display: block; padding: 0.5em 0.75e
   border-radius: 2px;
   transition: transform 0.2s, opacity 0.2s;
 }
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .nav-toggle { display: block; }
   .nav-links {
     position: absolute;
@@ -401,6 +401,18 @@ p.todo, blockquote.todo, h1.todo, h3.todo { display: block; padding: 0.5em 0.75e
   :root:not([data-theme="light"]) .status-in-progress { background: #3a2312; color: #fdba74; }
   :root:not([data-theme="light"]) .status-complete { background: #0f2e1d; color: #86efac; }
 }
+
+/* Demo reports */
+.report-heading { margin-top: 36px; }
+.stats {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  margin: 24px 0 8px;
+}
+.stat { padding: 20px; display: flex; flex-direction: column; gap: 4px; }
+.stat-value { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; color: var(--accent); }
+.stat-label { font-size: 0.85rem; color: var(--muted); }
 
 /* Members */
 .members {

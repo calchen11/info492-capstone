@@ -124,6 +124,91 @@ window.SITE_CONTENT = {
     },
   ],
 
+  // Demo write-ups, each shown as its own section/tab. `id` must match the
+  // section id in index.html. stats: [{ value, label }] (optional).
+  demoReports: [
+    {
+      id: "demo-1",
+      title: "Turning past bids into a priced estimate",
+      stats: [],
+      sections: [
+        {
+          heading: "What our demo tests",
+          body: [
+            "Our first demo focuses on the core of public pricing knowledge being published but not usable. We want to test if our tool can turn a pile of past bid tabs into a usable, location-adjusted unit price range for different bid items. Our tool BidGrid lets users find past Caltrans contracts on a map, study an item’s price history across years and districts, then build a new estimate. In the estimate builder we use plain language to catalog items and price each one from comparables within 50 miles and five years. For this demo we used synthetic data. We had a seeded generator produce 233 unique contracts across six districts from 2016 to 2026, modeling escalation, district cost factors, and bidder spread.",
+          ],
+        },
+        {
+          heading: "What happened",
+          body: [
+            "The demo starts on the map with options to filter by district, filter by item family, and zoom, to open existing contract summaries including details on dates, type of work, bidders, and line items. Dropping a pin on a specific location starts a bid estimation. Here users can provide a description of what they are building along with dimensions. From there they will be asked to confirm additional details and be suggested related items. After obtaining all necessary information a bid item table is returned with codes, quantities, unit prices and totals.",
+            "Each bid item returned has a simple dropdown containing comparable bids with the corresponding contract’s information. Clicking on the item itself presents in-depth details on the item family’s current average price, price changes over time, a map of contracts with that item, and a line items list of that item with bidder information. From there, a bidder’s contract history, locations and pricing position can also be viewed. Once done, estimates can be saved as drafts and accessed later.",
+          ],
+        },
+        {
+          heading: "What it says about our thesis",
+          body: [
+            "The demo shows that the first half of our thesis can be addressed. Historical bid data that is hard to use as published tables becomes searchable, comparable, and location-adjusted in a few clicks. An estimator can go from a plain-language description to a priced bid item list without leaving the tool.",
+            "However, we still need to show that these prices reduce estimate error. We have not measured accuracy, and because the data is synthetic, results would partly reflect our own generator’s assumptions. The tool also exposes a gap we expected. Lump-sum items such as mobilization often have no comparable projects of similar size, which matches the wide lump-sum spread we saw on Caltrans 05-1P2404.",
+          ],
+        },
+        {
+          heading: "Moving forward",
+          body: [
+            "We will iterate on the tool and test it against our claim. We will hold out past contracts, compare BidGrid’s prices to the low bid and the engineer’s estimate, and then repeat the test on real Caltrans Contract Cost Data.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "demo-2",
+      title: "Measuring bid relevance",
+      stats: [
+        { value: "45.8%", label: "AI run 1 (11 of 24)" },
+        { value: "50%", label: "AI run 2 (12 of 24)" },
+        { value: "25%", label: "Keyword search (6 of 24)" },
+        { value: "80%", label: "Target relevance rate" },
+      ],
+      sections: [
+        {
+          heading: "What the demo tests",
+          body: [
+            "For Demo 2, our team focuses on evaluating how well BidGrid can find relevant historical construction bids using Caltrans data. Our goal is to help subcontractors find useful pricing information without spending too much time searching through different contracts and documents.",
+            "In Demo 1, we showed how our tool could make historical bid data easier to search and compare. However, we did not have a clear way to measure how well the agent performed. For Demo 2, we wanted to test whether the AI agent could identify relevant bids for a specific construction project.",
+          ],
+        },
+        {
+          heading: "Evaluation method",
+          body: [
+            "We tested BidGrid using 10 different construction project examples with different locations and project types. We evaluated how many of the agent’s suggested bids matched our answer key. Our target was an 80% relevance rate.",
+            "We ran the AI agent twice and compared its results with a basic keyword search without AI. The answer key was created manually based on project type, location, and bid date.",
+          ],
+        },
+        {
+          heading: "What happened",
+          body: [
+            "The first AI run found 11 out of 24 relevant bids (45.8%), and the second run found 12 out of 24 (50%). In comparison, the basic keyword search found only 6 out of 24 (25%). Although the AI performed better than the basic search method, it did not reach our 80% target.",
+            "We also found some problems with the results. The agent sometimes suggested bids that looked similar but were not actually relevant. Other problems included outdated bids and bids from less relevant locations.",
+            "One important limitation is that our ground truth was based on manual judgment. This means our evaluation results may not fully reflect the agent’s actual performance.",
+          ],
+        },
+        {
+          heading: "What this means for our thesis",
+          body: [
+            "The results partially support our idea that AI can help subcontractors find useful historical bid information. Both AI runs performed better than the basic keyword search, suggesting that considering project details and location may improve search results.",
+            "However, the agent still made mistakes and did not meet our success target. We need to improve how it selects relevant bids before we can consider it reliable.",
+          ],
+        },
+        {
+          heading: "Next steps",
+          body: [
+            "For Demo 3, we plan to improve how the agent considers project type, location, and bid dates. We also want to improve our ground truth using more reliable historical data and collect feedback from a real stakeholder.",
+          ],
+        },
+      ],
+    },
+  ],
+
   // photo: path like "assets/jane.jpg" (optional; initials are used otherwise)
   members: [
     { name: "Ethan Kawahara", role: "", photo: "", linkedin: "", email: "" },
@@ -132,5 +217,5 @@ window.SITE_CONTENT = {
     { name: "Kaige Cheng", role: "", photo: "", linkedin: "", email: "" },
   ],
 
-  lastUpdated: "2026-10-08",
+  lastUpdated: "2026-10-23",
 };

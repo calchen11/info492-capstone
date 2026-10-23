@@ -108,6 +108,28 @@
     demos.appendChild(card);
   });
 
+  // Demo reports
+  (C.demoReports || []).forEach((r) => {
+    const section = document.getElementById(r.id);
+    if (!section) return;
+    const box = section.querySelector(".demo-report");
+    box.appendChild(el("h2", "", r.title));
+    if (r.stats && r.stats.length) {
+      const stats = el("div", "stats");
+      r.stats.forEach((s) => {
+        const stat = el("div", "stat card");
+        stat.appendChild(el("span", "stat-value", s.value));
+        stat.appendChild(el("span", "stat-label", s.label));
+        stats.appendChild(stat);
+      });
+      box.appendChild(stats);
+    }
+    r.sections.forEach((s) => {
+      box.appendChild(el("h3", "report-heading", s.heading));
+      s.body.forEach((p) => box.appendChild(el("p", "", p)));
+    });
+  });
+
   // Members
   const members = document.getElementById("members");
   C.members.forEach((m) => {
