@@ -104,7 +104,13 @@
       card.appendChild(el("h4", "", "Findings"));
       card.appendChild(el("p", "", d.findings));
     }
-    if (d.link) card.appendChild(newTabLink("View demo →", d.link, "demo-link"));
+    if (d.link.startsWith("#")) {
+      const a = el("a", "demo-link", "Read write-up →");
+      a.href = d.link;
+      card.appendChild(a);
+    } else if (d.link) {
+      card.appendChild(newTabLink("View demo →", d.link, "demo-link"));
+    }
     demos.appendChild(card);
   });
 

@@ -90,33 +90,38 @@ window.SITE_CONTENT = {
   // The four demos. status: "planned" | "in-progress" | "complete"
   demos: [
     {
-      title: "Historical Price Lookup",
+      title: "Map and Estimate Builder",
       concept:
-        "Provide an item code, quantity, and project details to get the historical prices most relevant to the project.",
-      status: "planned",
+        "Find past contracts on a map, study an item’s price history, and turn a plain-language project description into a priced bid item list.",
+      status: "complete",
+      date: "",
+      findings:
+        "Historical bids became searchable, comparable, and location-adjusted in a few clicks. Accuracy is not yet measured, and lump-sum items often lack comparables.",
+      link: "#demo-1",
+    },
+    {
+      title: "Bid Relevance Evaluation",
+      concept:
+        "Test whether the agent can find relevant historical bids for 10 example projects, compared against a manual answer key and a keyword search.",
+      status: "complete",
+      date: "",
+      findings:
+        "The agent found 46% and 50% of relevant bids across two runs, versus 25% for keyword search, short of our 80% target.",
+      link: "#demo-2",
+    },
+    {
+      title: "Relevance Improvements",
+      concept:
+        "Improve how the agent weighs project type, location, and bid date, rebuild the answer key from real Caltrans data, and rerun the Demo 2 test on top-3 suggestions.",
+      status: "in-progress",
       date: "",
       findings: "",
       link: "",
     },
     {
-      title: "Map-Based Lookup",
-      concept: "Input a location to find and compare similar nearby past projects and their costs.",
-      status: "planned",
-      date: "",
-      findings: "",
-      link: "",
-    },
-    {
-      title: "Estimate Review",
-      concept: "Flag items that fall outside their expected ranges based on historical data.",
-      status: "planned",
-      date: "",
-      findings: "",
-      link: "",
-    },
-    {
-      title: "Bid Builder",
-      concept: "Describe the project to get a drafted bid item breakdown that the estimator edits.",
+      title: "Subcontractor Pricing Test",
+      concept:
+        "Subcontractors price specialty items on past contracts with BidGrid and with their usual process. We compare the time taken, and check BidGrid’s prices against the low bid and engineer’s estimate.",
       status: "planned",
       date: "",
       findings: "",
