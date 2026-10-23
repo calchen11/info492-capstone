@@ -1,14 +1,15 @@
 /* ---------- Design tokens ---------- */
 :root {
   --bg: #ffffff;
-  --bg-alt: #f6f7fb;
+  --bg-alt: #f5f5f4;
   --surface: #ffffff;
-  --text: #0f172a;
-  --muted: #5b6478;
-  --border: #e3e6ef;
-  --accent: #4f46e5;
-  --accent-2: #f97316;
-  --accent-soft: #eef0ff;
+  --text: #111827;
+  --muted: #57534e;
+  --border: #e7e5e4;
+  --accent: #a16207;
+  --accent-2: #facc15;
+  --accent-soft: #fefce8;
+  --on-accent: #111827;
   --todo-bg: #fff7e6;
   --todo-border: #f5b546;
   --todo-text: #8a5a00;
@@ -20,15 +21,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0b0f1a;
-    --bg-alt: #111727;
-    --surface: #151c2e;
-    --text: #e8ecf5;
-    --muted: #9aa4ba;
-    --border: #232c43;
-    --accent: #8b85ff;
-    --accent-2: #fb923c;
-    --accent-soft: #1d2142;
+    --bg: #0f1115;
+    --bg-alt: #16181d;
+    --surface: #1c1f26;
+    --text: #f3f4f6;
+    --muted: #a8a29e;
+    --border: #2c2f37;
+    --accent: #facc15;
+    --accent-2: #fde047;
+    --accent-soft: #2a2410;
+    --on-accent: #111827;
     --todo-bg: #2a2110;
     --todo-border: #a57622;
     --todo-text: #f3c873;
@@ -36,15 +38,16 @@
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0b0f1a;
-  --bg-alt: #111727;
-  --surface: #151c2e;
-  --text: #e8ecf5;
-  --muted: #9aa4ba;
-  --border: #232c43;
-  --accent: #8b85ff;
-  --accent-2: #fb923c;
-  --accent-soft: #1d2142;
+  --bg: #0f1115;
+  --bg-alt: #16181d;
+  --surface: #1c1f26;
+  --text: #f3f4f6;
+  --muted: #a8a29e;
+  --border: #2c2f37;
+  --accent: #facc15;
+  --accent-2: #fde047;
+  --accent-soft: #2a2410;
+  --on-accent: #111827;
   --todo-bg: #2a2110;
   --todo-border: #a57622;
   --todo-text: #f3c873;
@@ -203,9 +206,9 @@ p.todo, blockquote.todo, h1.todo, h3.todo { display: block; padding: 0.5em 0.75e
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(60% 80% at 85% 10%, rgba(249, 115, 22, 0.55), transparent 60%),
-    radial-gradient(50% 70% at 10% 90%, rgba(56, 189, 248, 0.45), transparent 60%),
-    linear-gradient(135deg, #1e1b4b 0%, #3730a3 45%, #4f46e5 100%);
+    radial-gradient(60% 80% at 85% 10%, rgba(250, 204, 21, 0.35), transparent 60%),
+    radial-gradient(50% 70% at 10% 90%, rgba(148, 163, 184, 0.25), transparent 60%),
+    linear-gradient(135deg, #111827 0%, #1f2937 45%, #374151 100%);
 }
 .hero-bg::after {
   /* subtle grid, a nod to drawing sheets */
@@ -258,14 +261,14 @@ p.todo, blockquote.todo, h1.todo, h3.todo { display: block; padding: 0.5em 0.75e
   transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
 }
 .btn:hover { transform: translateY(-1px); }
-.btn-primary { background: #fff; color: #1e1b4b; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); }
+.btn-primary { background: #facc15; color: #111827; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); }
 .btn-ghost { color: #fff; border: 1px solid rgba(255, 255, 255, 0.4); }
 .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
 .btn-small {
   padding: 8px 16px;
   font-size: 0.875rem;
-  background: var(--accent);
-  color: #fff;
+  background: var(--accent-2);
+  color: var(--on-accent);
 }
 
 /* ---------- Sections ---------- */
@@ -276,7 +279,7 @@ p.todo, blockquote.todo, h1.todo, h3.todo { display: block; padding: 0.5em 0.75e
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-2);
+  color: var(--accent);
   margin-bottom: 12px;
 }
 .lead { font-size: 1.1rem; color: var(--muted); max-width: 720px; margin-bottom: 40px; }
@@ -344,8 +347,8 @@ p.todo, blockquote.todo, h1.todo, h3.todo { display: block; padding: 0.5em 0.75e
   height: 48px;
   padding: 0 10px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--accent), #7c3aed);
-  color: #fff;
+  background: var(--accent-2);
+  color: var(--on-accent);
   font-weight: 800;
   font-size: 0.9rem;
   margin-bottom: 16px;
@@ -415,8 +418,8 @@ p.todo, blockquote.todo, h1.todo, h3.todo { display: block; padding: 0.5em 0.75e
   place-items: center;
   font-size: 1.6rem;
   font-weight: 800;
-  color: #fff;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: var(--on-accent);
+  background: linear-gradient(135deg, var(--accent-2), #eab308);
   object-fit: cover;
 }
 .member p { margin-bottom: 8px; }

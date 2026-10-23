@@ -10,11 +10,11 @@
  */
 window.SITE_CONTENT = {
   team: {
-    name: "Sub Team 3",
+    name: "BidGrid",
     tagline:
       "Public construction pricing is published but not usable. We're building an agent-assisted tool that turns past Caltrans bids into grounded, editable price ranges.",
     course: "INFO 492 Capstone",
-    quarter: "Autumn 2026",
+    quarter: "Au 26 - Team 3",
     googleDocUrl:
       "https://docs.google.com/document/d/1dkDYg9ZpvF01frZfb1RdrT_merclshbYzT-S-lli5bg/edit?usp=sharing",
   },
@@ -22,13 +22,13 @@ window.SITE_CONTENT = {
   thesis: {
     // The single, testable claim, shown as a highlighted callout.
     claim:
-      "An agent-assisted tool that retrieves comparable past bid items, adjusts them for location and site conditions, and presents them as editable price ranges can measurably reduce estimate error on public heavy civil projects.",
+      "We claim that an agent-assisted tool that retrieves comparable past bid items, adjusts them for location and site conditions, and presents them as editable price ranges, can measurably reduce estimate error on public heavy civil projects.",
     // Full thesis (~500 words). Each string becomes its own paragraph.
     body: [
       "Public agencies publish detailed construction pricing, but it rarely reaches estimators in a usable form. Caltrans releases item-level results for its contracts, including every bidder’s unit price and the engineer’s estimate, but one contract at a time, and largely as PDFs.",
       "Caltrans contract 05-1P2404, a bridge protection project in Santa Cruz County, shows the problem. The engineer’s estimate was $791,928.60, but the low bid was $508,374.40, or 35.81% under, and seven bids ranged up to $964K. The disagreement was uneven. Measured items were priced consistently: hydraulic biotic growth medium ranged from $0.82 to $1.35 per square foot. Loosely scoped items varied widely: temporary irrigation, a lump sum, ranged from $5,800 to $15,000, and time-related overhead from $250 to $7,110 per working day.",
       "Historical prices alone also miss context. A unit price reflects site access, terrain, local labor, and contractor travel. Existing services like RSMeans apply city-level cost indexes, which cannot distinguish a flat urban site from a creek bed on a mountain highway. The Boulder Creek project required a creek diversion and wildlife exclusion, and mobilization ranged from $35,000 to $185,000. A naive average would treat it like any job with the same item codes.",
-      "Our claim is testable in two ways. First, for accuracy, we will hold out past Caltrans contracts and compare our estimates to each contract’s three lowest bids. Our baselines are the engineer’s estimate and unadjusted historical averages, and we will report lump sum and unit-priced items separately. Second, for usefulness, we will work with subcontractors to price their specialty items on past contracts, once with our tool and once with their usual process, and measure the time each takes. If our approach does not beat both accuracy baselines, or does not save subcontractors time, the claim is weakened.",
+      "Our claim is testable in two ways. First, for relevance, our agent builds an estimate from a project description using similar past bids, and we expect it to gather relevant historical bids faster and more easily than doing it by hand. For each test project, we will count how many of the agent’s top 3 suggested bids are actually relevant. We set our target before running anything: at least 80% of suggested bids must be relevant. Second, for usefulness, we will work with subcontractors to price their specialty items on past contracts, once with our tool and once with their usual process, and measure the time each takes. If fewer than 80% of suggested bids are relevant, or the tool does not save subcontractors time, the claim is weakened.",
       "We recognize that these are estimates, not exact prices. Contractors sometimes shift money between items for strategic reasons, so item prices are noisy, and Caltrans data may not transfer to local or private work. The tool’s value is speed and grounding: it gives estimators fast ballpark numbers rooted in real bid data, which they accept, edit, or reject using their own judgment.",
     ],
     // Sources cited in the thesis. { text, url } and url is optional.
