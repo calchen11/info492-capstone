@@ -1,6 +1,6 @@
 # Sub Team 3: Public Pricing Knowledge, Made Usable
 
-**Live site: https://calchen11.github.io/info492-capstone/**
+**Live site: https://calchen11.github.io/info492_team3/**
 
 This is the team site for Sub Team 3's INFO 492 capstone (Autumn 2026). It presents our thesis, the data we work from, who our tool serves, and the four demos we're building over the quarter.
 
