@@ -212,6 +212,42 @@ window.SITE_CONTENT = {
         },
       ],
     },
+    {
+      id: "midquarter",
+      title: "Midquarter analysis",
+      stats: [],
+      sections: [
+        {
+          heading: "First two experiments",
+          body: [
+            "In Week 2 we claimed that an agent-assisted tool that retrieves comparable past bid items, adjusts them for location and site conditions, and presents them as editable price ranges can measurably reduce estimate error on public heavy civil projects. We proposed two tests for this claim: relevance, and usefulness as measured by time saved. For relevance, we aimed for at least 80% of the agent’s suggested bids to be relevant, meaning they matched the bids we picked by hand. We judged relevance first by type of work, preferring projects with similar tasks. Then location: preferring bids in the same cluster, then nearby bids, and at minimum the same region (North, South, etc.). Then when too few relevant bids existed, giving distance less weight. For usefulness, subcontractors would price their specialty items on past contracts with our tool and with their usual process, and we would compare the time each took.",
+            "Demo 1 showed that the tool itself could be built. Our tool, BidGrid, turned bid tabs into a searchable map that takes a plain-language project description and returns a priced item list that uses comparables within 50 miles and five years. However, we ran this on 233 synthetic contracts from our own seeded generator, so there was no testing for relevance or accuracy.",
+            "Demo 2 tested relevance directly. For 10 project locations, we hand-picked the two or three most relevant past bids and ran the agent twice to gauge how many of those same bids it would find on its own. In the first run the agent matched 11 of 24 (45.8%) and 12 of 24 on the second (50%), while a keyword search matched 6 of 24 (25%). The agent doubled the baseline simple search but fell well short of the 80% target, so by our own criterion the claim is weakened. We concluded that agent failures include bids that were too old, bids from less relevant locations or with less comparable items, bids that were simply irrelevant, and bids that were superficially similar but irrelevant.",
+            "As of now, the relevance claim is not supported and the time-savings claim is untested. Our experiments show that we have a usable tool, but not yet a reliable way to judge it, since our answer key rested on our own judgment and our tool still ran on synthetic data. Looking ahead, we will work to incorporate real Caltrans bid results to replace the synthetic data and score the agent against historical bids.",
+          ],
+        },
+        {
+          heading: "Industry practitioner feedback",
+          body: ["TODO: Summarize feedback from an industry practitioner."],
+        },
+        {
+          heading: "Class feedback",
+          body: [
+            "While the feedback we received praised one part of our evaluation strategy, the keyword-search baseline comparison, our ground truth was the subject of much criticism, as we initially feared. The main problem pointed out was that our own team’s judgement was being used to determine the ground truth of what was considered a “relevant” bid. Despite attempting to adhere to a grading criteria, the method is fraught with subjectivity and variance and the self-grading results in a lack of independent evaluation of our model.",
+            "This criticism heavily impacts the ability of our demo’s ability to argue in favor of our thesis, that being that our model can provide relevant bids in a manner faster and, most importantly, more accurately than a human. For this reason we unfortunately have to conclude that while we believe our model to be promising, the flaws in our evaluation method means we must defer to the null hypothesis of our thesis, that being there is not significant evidence our model achieves better than human accuracy.",
+            "To address this feedback we’ll be moving our evaluation methodology to be backed by historical data and a mathematical scoring method as opposed to loose judgement based on a grading rubric. Enabled by our next model being able to ingest real data, we will be able to evaluate the model’s results by looking at real historical bids. This provides the basis for our ground truth. We’ll be comparing the bid-items and their prices of the input bid and comparing them against the items of our model’s suggested bids. This way, we can use a mathematical scoring method to assign each suggestion a score as a proxy for relevance. We hope that this evaluation model will be more accurate, repeatable, understandable, and relevant to the needs of our stakeholders and allow us to concretely assess whether or not our thesis holds true or false.",
+          ],
+        },
+        {
+          heading: "Human factors in the coordination problem",
+          body: [
+            "One problem with construction cost estimation is that different people may have different ideas about which past projects are useful. Even if two projects have similar materials, their costs can be different because of location, size, or working conditions. Engineers and subcontractors need to use their own experience when comparing prices. This can also make communication harder when people working on the same project have different opinions.",
+            "Another issue is whether people can trust the results from our tool. In Demo 2, we found that BidGrid sometimes suggested projects that looked similar but were not actually relevant. If this happens often, users may not trust the tool or want to use it. We think it is important that users can see where the prices come from and decide whether those prices make sense for their own projects.",
+            "When working with our initial evidence, we mainly looked at the differences between historical bid prices and engineer estimates. At that time, we thought having access to more historical data would help people make better estimates. But after our two demos, we realized that having more data does not always mean better results. We still need to improve how we select relevant projects and test whether our tool is actually helpful. We believe BidGrid could make the process easier, but it should support engineers’ decisions rather than replace their experience.",
+          ],
+        },
+      ],
+    },
   ],
 
   // photo: path like "assets/jane.jpg" (optional; initials are used otherwise)
@@ -222,5 +258,5 @@ window.SITE_CONTENT = {
     { name: "Kaige Cheng", role: "", photo: "", linkedin: "", email: "" },
   ],
 
-  lastUpdated: "2026-10-23",
+  lastUpdated: "2026-10-29",
 };
