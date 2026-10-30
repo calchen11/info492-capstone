@@ -228,7 +228,11 @@ window.SITE_CONTENT = {
         },
         {
           heading: "Industry practitioner feedback",
-          body: ["TODO: Summarize feedback from an industry practitioner."],
+          body: [
+            "We interviewed the Director of the Analytics for Infrastructure Management (AIM) Lab, Dr. Abdolmajid (Mazi) Erfani, whose research applies AI and data analytics to construction, transportation, and infrastructure decisions. His work includes extensive research on bid estimation and construction price prediction, supported by over $2M in sponsored research from NSF, NCHRP, state DOTs, and industry.",
+            "In our interview, he gave feedback on using an economic price index in our model to account for price changes over time, and identified other key factors that influence construction prices beyond location and site conditions. This feedback suggests that our thesis’s focus on location and site adjustment may be too narrow, and that a stronger model would combine these with market-wide price trends.",
+            "This builds on our interview last week with Professor and Associate Chair of Education in Civil and Environmental Engineering, Steve Muench, who stressed that owners like WSDOT also struggle to understand prices and are held back by outdated estimating tools. Moving forward, we plan to add a price index and the other factors the director raised, while keeping BidGrid simple enough for both estimators and owners to use.",
+          ],
         },
         {
           heading: "Class feedback",
